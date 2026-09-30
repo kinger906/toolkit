@@ -1,6 +1,6 @@
 [package]
 name = "toolkit"
-version = "0.2.0"
+version = "0.3.0"
 description = "A local tool collection platform built with Tauri 2 + Vue 3"
 authors = ["you"]
 edition = "2021"
