@@ -108,6 +108,7 @@ const result = await invoke<string>("your_command", { arg: "..." });
 | 时间戳转换 | Unix ↔ 本地 / ISO |
 | 定时关机 | 倒计时关机 / 重启（Windows） |
 | 视频转 MP3 | 提取音频，支持起止时间剪切（需 FFmpeg） |
+| 颜色取色器 | 屏幕取色，转换 HEX / RGB / HSL |
 
 ## 技术栈
 

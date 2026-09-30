@@ -13,6 +13,7 @@ import base64 from "./base64";
 import timestamp from "./timestamp";
 import shutdownTimer from "./shutdown-timer";
 import videoToMp3 from "./video-to-mp3";
+import colorPicker from "./color-picker";
 
 const tools: ToolModule[] = [
   jsonFormatter,
@@ -20,6 +21,7 @@ const tools: ToolModule[] = [
   timestamp,
   shutdownTimer,
   videoToMp3,
+  colorPicker,
 ];
 
 export function setupTools(): void {

@@ -1,18 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
-  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
 
-  --bg: #f3f1ec;
-  --surface: #fffcf7;
-  --surface-hover: #ebe7df;
-  --border: #ddd6cb;
-  --text: #1c1915;
-  --text-muted: #5c564c;
-  --text-faint: #8a8378;
-  --accent: #0f6e56;
-  --accent-soft: #e2f3ed;
+  /* 清爽液态玻璃色板 */
+  --bg: #e8f1f6;
+  --bg-accent-a: #c8e8ef;
+  --bg-accent-b: #d4f0e4;
+  --bg-accent-c: #dce4f8;
+
+  --surface: rgba(255, 255, 255, 0.48);
+  --surface-strong: rgba(255, 255, 255, 0.62);
+  --surface-hover: rgba(255, 255, 255, 0.72);
+  --border: rgba(255, 255, 255, 0.62);
+  --border-soft: rgba(148, 163, 184, 0.28);
+
+  --text: #1e293b;
+  --text-muted: #475569;
+  --text-faint: #94a3b8;
+
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+
+  --glass-blur: 22px;
+  --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+  --radius-lg: 20px;
+  --radius-md: 14px;
 
   font-family: var(--font-sans);
   font-size: 16px;
@@ -28,15 +42,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #161412;
-    --surface: #1e1c19;
-    --surface-hover: #2a2722;
-    --border: #3a3530;
-    --text: #f2efe8;
-    --text-muted: #b0a99c;
-    --text-faint: #7a7468;
-    --accent: #3ecf8e;
-    --accent-soft: #1a3329;
+    --bg: #0f172a;
+    --bg-accent-a: #134e4a;
+    --bg-accent-b: #1e3a5f;
+    --bg-accent-c: #312e81;
+
+    --surface: rgba(30, 41, 59, 0.55);
+    --surface-strong: rgba(30, 41, 59, 0.72);
+    --surface-hover: rgba(51, 65, 85, 0.7);
+    --border: rgba(148, 163, 184, 0.22);
+    --border-soft: rgba(148, 163, 184, 0.16);
+
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-faint: #64748b;
+
+    --accent: #2dd4bf;
+    --accent-soft: rgba(45, 212, 191, 0.14);
+
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
   }
 }
 
@@ -56,6 +80,10 @@ body,
   overflow: hidden;
 }
 
+body {
+  background: var(--bg);
+}
+
 button,
 input,
 select,
@@ -67,16 +95,37 @@ a {
   color: var(--accent);
 }
 
+/* 通用玻璃面板 */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-strong {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  box-shadow: var(--glass-shadow);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
+  background: color-mix(in srgb, var(--text-faint) 45%, transparent);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-faint);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }

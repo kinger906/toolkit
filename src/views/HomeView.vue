@@ -61,10 +61,10 @@ const groups = computed(() => {
 }
 
 .group-title {
-  margin: 0 0 12px 6px;
-  font-size: 0.75rem;
+  margin: 0 0 12px 8px;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-faint);
 }
@@ -72,13 +72,24 @@ const groups = computed(() => {
 .icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 4px;
+  gap: 10px 6px;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
 }
 
 .empty {
   padding: 80px 16px;
   text-align: center;
   color: var(--text-muted);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
 .empty .hint {
@@ -89,7 +100,7 @@ const groups = computed(() => {
 
 .empty code {
   padding: 1px 6px;
-  border-radius: 4px;
+  border-radius: 6px;
   background: var(--surface-hover);
   font-family: var(--font-mono);
   font-size: 0.8em;

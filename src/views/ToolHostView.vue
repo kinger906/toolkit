@@ -14,9 +14,9 @@ const tool = computed(() => {
 
 <template>
   <div v-if="tool" class="tool-host">
-    <header class="tool-header">
+    <header class="tool-header glass">
       <div class="tool-title-row">
-        <span class="tool-icon">{{ tool.icon }}</span>
+        <span class="tool-icon glass-strong">{{ tool.icon }}</span>
         <div>
           <h1>{{ tool.name }}</h1>
           <p>{{ tool.description }}</p>
@@ -24,11 +24,11 @@ const tool = computed(() => {
       </div>
       <span class="tool-badge">{{ CATEGORY_LABELS[tool.category] }}</span>
     </header>
-    <div class="tool-body">
+    <div class="tool-body glass-strong">
       <component :is="tool.component" />
     </div>
   </div>
-  <div v-else class="missing">
+  <div v-else class="missing glass">
     <h2>工具不存在</h2>
     <p>找不到 id 为「{{ route.params.id }}」的工具。</p>
     <router-link to="/">返回桌面</router-link>
@@ -46,9 +46,9 @@ const tool = computed(() => {
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
 }
 
 .tool-title-row {
@@ -64,8 +64,6 @@ const tool = computed(() => {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
   font-size: 1.3rem;
   flex-shrink: 0;
 }
@@ -74,7 +72,7 @@ const tool = computed(() => {
   margin: 0 0 4px;
   font-size: 1.35rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .tool-header p {
@@ -85,23 +83,24 @@ const tool = computed(() => {
 
 .tool-badge {
   flex-shrink: 0;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--surface-hover);
+  padding: 5px 11px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
   font-size: 0.7rem;
-  color: var(--text-faint);
+  color: var(--accent);
+  font-weight: 500;
 }
 
 .tool-body {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 20px;
 }
 
 .missing {
   text-align: center;
   padding: 64px 16px;
+  border-radius: var(--radius-lg);
   color: var(--text-muted);
 }
 
