@@ -106,6 +106,8 @@ const result = await invoke<string>("your_command", { arg: "..." });
 | JSON 格式化 | 格式化 / 压缩 / 语法校验 |
 | Base64 编解码 | UTF-8 安全编解码 |
 | 时间戳转换 | Unix ↔ 本地 / ISO |
+| 定时关机 | 倒计时关机 / 重启（Windows） |
+| 视频转 MP3 | 提取音频，支持起止时间剪切（需 FFmpeg） |
 
 ## 技术栈
 

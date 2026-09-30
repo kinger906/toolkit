@@ -11,8 +11,16 @@ import type { ToolModule } from "@/types/tool";
 import jsonFormatter from "./json-formatter";
 import base64 from "./base64";
 import timestamp from "./timestamp";
+import shutdownTimer from "./shutdown-timer";
+import videoToMp3 from "./video-to-mp3";
 
-const tools: ToolModule[] = [jsonFormatter, base64, timestamp];
+const tools: ToolModule[] = [
+  jsonFormatter,
+  base64,
+  timestamp,
+  shutdownTimer,
+  videoToMp3,
+];
 
 export function setupTools(): void {
   registerTools(tools);
