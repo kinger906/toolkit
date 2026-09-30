@@ -109,6 +109,7 @@ const result = await invoke<string>("your_command", { arg: "..." });
 | 定时关机 | 倒计时关机 / 重启（Windows） |
 | 视频转 MP3 | 提取音频，支持起止时间剪切（需 FFmpeg） |
 | 颜色取色器 | 屏幕取色，转换 HEX / RGB / HSL |
+| 闹钟提醒 | 多闹钟，按星期多周期重复（托盘后台仍提醒） |
 
 ## 技术栈
 

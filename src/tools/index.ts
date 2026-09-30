@@ -14,11 +14,13 @@ import timestamp from "./timestamp";
 import shutdownTimer from "./shutdown-timer";
 import videoToMp3 from "./video-to-mp3";
 import colorPicker from "./color-picker";
+import alarm from "./alarm";
 
 const tools: ToolModule[] = [
   jsonFormatter,
   base64,
   timestamp,
+  alarm,
   shutdownTimer,
   videoToMp3,
   colorPicker,
